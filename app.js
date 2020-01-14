@@ -60,6 +60,9 @@ function gameOver(won, msg) {
   guessInputUI.disabled = true;
   guessInputUI.style.borderColor = color;
   setMessage(msg, color);
+
+  guessBtnUI.value = "Play Again";
+  guessBtnUI.className += "play-again";
 }
 
 function setMessage(msg, color) {

@@ -15,6 +15,10 @@ maxNumUI.textContent = max;
 
 guessBtnUI.addEventListener("click", function() {
   let guess = parseInt(guessInputUI.value);
+
+  if (guess === NaN || guess < min || guess > max) {
+    setMessage(`Please enter a number between ${min} and ${max}`);
+  }
 });
 
 function setMessage(msg) {

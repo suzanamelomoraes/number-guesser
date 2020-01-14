@@ -17,15 +17,50 @@ guessBtnUI.addEventListener("click", function() {
   let guess = parseInt(guessInputUI.value);
 
   if (isNaN(guess) || guess < min || guess > max) {
-    setMessage(`Please enter a number between ${min} and ${max}`, "red");
+    setMessage(`Please enter a number between ${min} and ${max}:`, "red");
   }
 
   if (guess === winningNum) {
-    guessInputUI.disabled = true;
-    guessInputUI.style.borderColor = "green";
-    setMessage(`${winningNum} is the correct number, YOU WIN!`, "green");
+    gameOver(true, `${winningNum} is the correct number, YOU WIN!`, "green");
+
+    // guessInputUI.disabled = true;
+    // guessInputUI.style.borderColor = "green";
+    // setMessage(`${winningNum} is the correct number, YOU WIN!`, "green");
+  } else {
+    guessesLeft -= 1;
+
+    if (guessesLeft === 0) {
+      gameOver(
+        false,
+        `You lost all your guesses. The correct number was ${winningNum}.`,
+        "red"
+      );
+      //   guessInputUI.disabled = true;
+      //   guessInputUI.style.borderColor = "red";
+      //   setMessage(
+      //     `You lost all your guesses. The correct number was ${winningNum}.`,
+      //     "red"
+      //   );
+    } else {
+      guessInputUI.value = "";
+      guessInputUI.style.borderColor = "red";
+      setMessage(
+        `${guess} is not the correct number. You have ${guessesLeft} guess left`,
+        "red"
+      );
+    }
   }
 });
+
+function gameOver(won, msg) {
+  let color;
+
+  won ? (color = "green") : (color = "red");
+
+  guessInputUI.disabled = true;
+  guessInputUI.style.borderColor = color;
+  setMessage(msg, color);
+}
 
 function setMessage(msg, color) {
   message.textContent = msg;

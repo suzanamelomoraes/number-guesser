@@ -3,7 +3,7 @@ let min = 1,
   winningNum = 2,
   guessesLeft = 3;
 
-const gameUI = document.querySelector("game"),
+const gameUI = document.querySelector("#game"),
   minNumUI = document.querySelector(".min-num"),
   maxNumUI = document.querySelector(".max-num"),
   guessBtnUI = document.querySelector("#guess-btn"),
@@ -12,6 +12,12 @@ const gameUI = document.querySelector("game"),
 
 minNumUI.textContent = min;
 maxNumUI.textContent = max;
+
+gameUI.addEventListener("mousedown", function(e) {
+  if (e.target.className === "play-again") {
+    window.location.reload();
+  }
+});
 
 guessBtnUI.addEventListener("click", function() {
   let guess = parseInt(guessInputUI.value);

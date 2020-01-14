@@ -16,3 +16,7 @@ maxNumUI.textContent = max;
 guessBtnUI.addEventListener("click", function() {
   let guess = parseInt(guessInputUI.value);
 });
+
+function setMessage(msg) {
+  message.textContent = msg;
+}

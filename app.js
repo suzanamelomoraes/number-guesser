@@ -16,11 +16,12 @@ maxNumUI.textContent = max;
 guessBtnUI.addEventListener("click", function() {
   let guess = parseInt(guessInputUI.value);
 
-  if (guess === NaN || guess < min || guess > max) {
-    setMessage(`Please enter a number between ${min} and ${max}`);
+  if (isNaN(guess) || guess < min || guess > max) {
+    setMessage(`Please enter a number between ${min} and ${max}`, "red");
   }
 });
 
-function setMessage(msg) {
+function setMessage(msg, color) {
   message.textContent = msg;
+  message.style.color = color;
 }

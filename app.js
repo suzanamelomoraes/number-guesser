@@ -1,6 +1,6 @@
 let min = 1,
   max = 10,
-  winningNum = 2,
+  winningNum = getRandonNum(min, max),
   guessesLeft = 3;
 
 const gameUI = document.querySelector("#game"),
@@ -69,6 +69,10 @@ function gameOver(won, msg) {
 
   guessBtnUI.value = "Play Again";
   guessBtnUI.className += "play-again";
+}
+
+function getRandonNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function setMessage(msg, color) {

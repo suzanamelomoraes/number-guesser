@@ -9,3 +9,6 @@ const gameUI = document.querySelector("game"),
   guessBtnUI = document.querySelector("#guess-btn"),
   guessInputUI = document.querySelector("#guess-input"),
   message = document.querySelector(".message");
+
+minNumUI.textContent = min;
+maxNumUI.textContent = max;

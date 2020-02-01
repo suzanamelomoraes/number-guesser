@@ -14,6 +14,6 @@ GAME FUNCTION:
 
 This application is one of the projects developed in the course Modern JavaScript from the Beginning by Udemy/Brad Traversy.
 
-Technologies:
+### Technologies:
 
 JavaScript, Skeleton, JQuery(link included only as dependency)

@@ -1,6 +1,8 @@
 # Number Guesser Game
 
-A game that allows the user to guess a number between 1 and 10. 
+A game developed in vanilla JS that allows the user to guess a number between 1 and 10. 
+
+The main goal of this project is to practice DOM manipulation and programming logic, by grabbing and manipulating data from HTML with vanilla JS functions and returning the result to the user.
 
 The number is generated randomly.
 
@@ -16,4 +18,6 @@ This application is one of the projects developed in the course Modern JavaScrip
 
 ### Technologies:
 
-JavaScript, Skeleton, JQuery(link included only as dependency)
+- JavaScript
+- Skeleton
+- JQuery(link included only as dependency)
